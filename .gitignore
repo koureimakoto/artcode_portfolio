@@ -1,4 +1,6 @@
 Cargo.lock
 target/
 dist/
-package_lock.json
+package-lock.json
+node_modules/
+fonts/

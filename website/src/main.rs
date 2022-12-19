@@ -1,3 +1,5 @@
+use website::{self, App};
+
 fn main() {
-    println!("Hello, world!");
+    yew::Renderer::<App>::new().render();
 }

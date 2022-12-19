@@ -1,0 +1,10 @@
+slintignore
+152 bytes
+/root/node_modules/*.json
+/node_modules/*
+./node_modules/*
+node_modules
+node_modules/*
+./node_modules/**
+**/node_modules/**
+./tsconfig.node.*
