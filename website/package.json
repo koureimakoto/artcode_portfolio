@@ -4,7 +4,7 @@
   "description": "My personal portfolio",
   "main": "index.ts",
   "scripts": {
-    "css:dev": "tailwindcss -i ./src/style.pcss -o ./css/style.min.css --minify --watch",
+    "css:dev": "postcss ./src/style.pcss -o ./css/style.min.css --watch",
     "css:build": "tailwindcss -i ./src/style.pcss -o ./css/style.min.css --minify",
     "dev": "trunk serve",
     "test": "jest --watchAll"
@@ -26,6 +26,7 @@
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
     "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.1.0",
     "postcss-load-config": "^4.0.1",
@@ -34,7 +35,6 @@
     "postcss-preset-env": "^7.8.0",
     "postcss-simple-vars": "^6.0.3",
     "postcss-utilities": "^0.8.4",
-    "tailwindcss": "^3.2.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.6.4"
   }

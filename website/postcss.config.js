@@ -5,6 +5,7 @@ module.exports = (ctx) => ({
       'postcss-simple-vars': { 
           variables: () => require('./styles.constants.cjs')
       },
+      'tailwindcss': {},
       'autoprefixer': {},
       'postcss-import': {},
       'postcss-preset-env': {},
