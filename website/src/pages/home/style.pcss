@@ -1,0 +1,112 @@
+.homeMenu {
+
+    display: flex;
+    width  : 100vw;
+    height : 100vh;
+    background-color: transparent !important;
+    
+}
+
+.specialCodeArea {
+
+    position   : absolute;
+    font-family: fira_code;
+    color: $white;
+    width: auto;
+    top : 1.5rem;
+    left: 2rem;
+    
+
+
+    & div {
+        white-space: pre-wrap !important;
+        max-height:1rem;
+        
+        span {
+            opacity: .4;
+            font-size: .8rem;
+            color: $white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        & .linkCode {
+            font-weight: 900 !important;
+            color: $codes_ruby !important;
+            cursor: pointer;
+        }
+
+        &:hover {
+            & .linkCode {
+                opacity: 1;
+                font-size: .85rem;
+            }
+        }
+    }
+}
+
+
+
+
+.rs, .php, .clang, .ts {
+    & div {
+        position:relative;
+
+        & .linkCode {
+            display: inline-block;
+        }
+        &:hover {
+            & .linkCode {
+                position: relative;
+            }
+        }
+    }
+}
+
+.rs {
+    & div {
+        & .linkCode { 
+            width: 5rem  
+        }
+        & .linkCode:hover {
+            left: -.1rem;
+        }
+    }
+}
+
+.php {
+    & div {
+        & .linkCode { 
+            width: 10rem  
+        }
+        & .linkCode:hover {
+            left: -.1rem;
+        }
+    }
+}
+
+.ts {
+    & div {
+        & .linkCode {
+            width: 8rem;
+        }
+        & .linkCode:hover {
+                left: -.2rem;
+        }
+    }
+}
+
+.clang {
+    
+    & div {
+
+        & .linkCode {
+            width: 14rem;
+        }
+        & .linkCode:hover {
+            left: -.2rem;
+        }
+    }
+}

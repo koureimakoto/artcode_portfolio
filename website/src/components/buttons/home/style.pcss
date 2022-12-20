@@ -1,0 +1,33 @@
+
+
+.homeNavSide { /* <a> as <Link/> component */
+    font-family: fira_code;
+
+    width: 50vw;
+    text-decoration: none;
+
+    /*
+     *  First component inside <a> is a <div> and define transparent behavior to
+     * block behavior inherited from its child. This makes setting display:block
+     * unnecessary inside the <a>.
+    */
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    &.codes div {
+        background-color: $black;
+        color: $white;
+    }
+
+    &.artworks div {
+        background-color: $white;
+        color: $black;
+    }
+
+}
