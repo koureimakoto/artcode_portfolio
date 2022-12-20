@@ -3,8 +3,13 @@ use yew::{Html, html, function_component};
 use crate::{
     components::buttons::{
         home::Props,
-        home::HomeButton
+        home::HomeButton,
     },
+    components::menus::{
+        code_style::Props as CodeStyleProps,
+        code_style::MenuCodeStylized
+    },
+
     pages::ArtworkCodeLayout::{
         CodeRoot, 
         ArtworkRoot
@@ -30,6 +35,8 @@ pub fn get() -> Html {
 
 
     html! {
+        <>
+        <MenuCodeStylized/>
         <nav class={String::from("homeMenu")} >
             // Code Side
             <HomeButton
@@ -46,5 +53,6 @@ pub fn get() -> Html {
                 callback = {rhs.callback}
             />
         </nav>
+        </>
     }
 }
