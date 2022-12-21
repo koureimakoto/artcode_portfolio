@@ -6,7 +6,6 @@ use crate::{
         home::HomeButton,
     },
     components::menus::{
-        code_style::Props as CodeStyleProps,
         code_style::MenuCodeStylized
     },
 
@@ -22,15 +21,13 @@ pub fn get() -> Html {
     let lhs = Props {
         class_name: String::from("codes"),
         name      : String::from("Code"),
-        route     : CodeRoot,
-        callback  : ||{}
+        route     : CodeRoot
     };
 
     let rhs = Props {
         class_name: String::from("artworks"),
         name      : String::from("Artwork"),
-        route     : ArtworkRoot,
-        callback  : ||{}
+        route     : ArtworkRoot
     };
 
 
@@ -43,14 +40,12 @@ pub fn get() -> Html {
                 class_name={lhs.class_name}
                 name={lhs.name}
                 route={lhs.route} 
-                callback = {lhs.callback}
             />
             // Artwork Site
             <HomeButton
                 class_name={rhs.class_name}
                 name={rhs.name}
                 route={rhs.route} 
-                callback = {rhs.callback}
             />
         </nav>
         </>

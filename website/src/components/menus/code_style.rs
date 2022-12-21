@@ -1,12 +1,15 @@
-pub use props::Data as Props;
-pub use props::SingleData as SingleProps;
+pub use props::Data                 as Props;
+pub use props::SingleData           as SingleProps;
 pub use component::MenuCodeStylized as MenuCodeStylized;
-use yew::platform::fmt::buffer;
-use yew::{Html, html};
+use yew::{
+    Html,
+    html
+};
 
 pub mod component;
 pub mod props;
 pub mod rust_layout;
+
 
 
 pub fn

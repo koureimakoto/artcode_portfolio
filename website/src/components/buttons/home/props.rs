@@ -10,6 +10,5 @@ use crate::pages::pages_paths::ArtworkCodeLayout;
 pub struct Data {
     pub class_name: String,
     pub name      : String,
-    pub route     : ArtworkCodeLayout ,
-    pub callback  : fn()
+    pub route     : ArtworkCodeLayout
 }

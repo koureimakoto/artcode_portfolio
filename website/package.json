@@ -4,10 +4,14 @@
   "description": "My personal portfolio",
   "main": "index.ts",
   "scripts": {
-    "css:dev": "postcss ./src/style.pcss -o ./css/style.min.css --watch",
-    "css:build": "tailwindcss -i ./src/style.pcss -o ./css/style.min.css --minify",
-    "dev": "trunk serve",
-    "test": "jest --watchAll"
+    "css:dev"  : "postcss   ./src/style.pcss -o ./css/style.min.css --watch",
+    "css:build": "postcss ./src/style.pcss -o ./css/style.min.css --minify",
+    "dev"    :  "trunk serve",
+    "release:soft": "trunk build --release",
+    "release:hard": "trunk build --release && wasm-opt -O3 ./dist/*.wasm -o ./dist/*.wasm",
+    "test:jest": "jest --watchAll",
+    "test:wasm": "cargo test --target wasm32-unknown-unknown",
+    "test:rust": "cargo test"
   },
   "author": "Talles Fagundes",
   "license": "MIT",

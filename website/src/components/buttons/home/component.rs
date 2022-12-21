@@ -1,29 +1,32 @@
 // Yew standards
-use yew::prelude::*;
-use yew_router::prelude::*;
+use yew::prelude::{
+    Html,
+    html,
+    classes,
+    function_component
+};
+use yew_router::prelude::Link;
 
 // Intern
 use crate::pages::pages_paths::ArtworkCodeLayout;
+use super::Props;
 
-use super::props::Data;
+fn prepare_button_content(name: &String) -> Html {
+    html! {
+        <div>
+            <h1>{name}</h1>
+        </div>
+    }
+}
 
-
-///
-/// ```
-///  Component(HomeButton)
-///     >> &home::Props
-///     << Html<Link<ArtworkCodeLayout>>
-/// ```
 #[function_component(HomeButton)]
-pub fn home_button(props: &Data) -> Html {
+pub fn home_button(props: &Props) -> Html {
     html! {
         <Link<ArtworkCodeLayout> 
             classes={classes!(&props.class_name, " homeNavSide")}
             to={props.route.clone()}
         >
-            <div>
-                <h1>{&props.name}</h1>
-            </div>
+            {prepare_button_content(&props.name)}
         </Link<ArtworkCodeLayout>>
     }
 }

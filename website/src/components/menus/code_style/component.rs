@@ -24,6 +24,12 @@ pub fn component() -> Html {
             span_class_name: String::from("linkCode games"),
             name: String::from("games"),
             route: CodeRoute::Games
+        },
+        SingleProps {
+            link_class_name: String::from("layout"),
+            span_class_name: String::from("linkCode layout"),
+            name: String::from("layout"),
+            route: CodeRoute::Games
         }
     ];
 
