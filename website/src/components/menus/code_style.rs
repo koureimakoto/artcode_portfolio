@@ -1,16 +1,23 @@
 pub use props::Data                 as Props;
 pub use props::SingleData           as SingleProps;
 pub use component::MenuCodeStylized as MenuCodeStylized;
+
 use yew::{
     Html,
-    html
+    html,
+    Classes
 };
+
+use yew_router::prelude::Link;
+use crate::pages::pages_paths::CodeRoute;
 
 pub mod component;
 pub mod props;
+pub mod jsx_layout;
 pub mod rust_layout;
 
-
+#[cfg(test)]
+pub mod tests;
 
 pub fn
 add_line(content: &str) -> Html {
@@ -35,7 +42,7 @@ add_line_array(contents: Vec<&str>) -> Html {
 pub fn 
 count_space( size: usize, max_size: usize) -> String{
     let mut size = size;
-    let mut buffer = String::from(" ");
+    let mut buffer = String::from("");
     while size < max_size {
         size += 1;
         buffer.push(' ');
@@ -55,4 +62,17 @@ get_greatest_word(words: &Vec<SingleProps>) -> usize {
     });
 
     greatest
+}
+
+#[inline]
+fn prepare_link_menu(route: CodeRoute, link_classes: Classes, content: Html) -> Html {
+    html!{
+        <>
+        
+        <Link<CodeRoute> classes={link_classes} to={route.clone()}>
+            {content}
+        </Link<CodeRoute>>
+        
+        </>
+    }
 }

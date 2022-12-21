@@ -5,6 +5,7 @@ use yew::{
 };
 
 use super::rust_layout::RustCodeLayout;
+use super::jsx_layout::JsxCodeLayout;
 use super::SingleProps;
 
 use crate::pages::pages_paths::CodeRoute;

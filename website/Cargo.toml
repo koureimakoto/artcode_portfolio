@@ -3,6 +3,14 @@ name    = "website"
 version = "0.1.0"
 edition = "2021"
 
+[target.wasm32-unknown-unknown]
+runner = 'wasm-bindgen-test-runner'
+
+[profile.dev]
+opt-level = 1
+debug-assertions = true
+debug = true
+
 [profile.release] 
 codegen-units = 1
 opt-level     = "z"

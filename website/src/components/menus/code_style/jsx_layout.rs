@@ -5,26 +5,25 @@ use yew::{
     function_component
 };
 
+
 use super::{
     Props,
-    add_line,
     count_space,
     add_line_array,
-    prepare_link_menu,
-    get_greatest_word
+    get_greatest_word,
+    prepare_link_menu
 };
-
-
 
 #[inline]
 fn prepare_link_menu_content(name: &String, span_class: &String, space_string_len: usize) -> Html {
     html! {
     <>
-        <span>{"        link::"}</span>
+        <span>{"        <Route _=\"{"}</span>
+        // Link Content format: [8-whitespace]link::$name => _,
         <span class={span_class}>
-            {name}{count_space(name.len(), space_string_len)}
+            {" < "}{name}{count_space(name.len(), space_string_len)}{"/>"}
         </span>
-        <span>{"=> _,"}</span>
+        <span>{"} />"}</span>
     </>
     }
 }
@@ -53,18 +52,22 @@ fn prepare_menu(props: &Props) -> Html {
     }
 }
 
-#[function_component(RustCodeLayout)]
+#[function_component(JsxCodeLayout)]
 pub fn rust_layout(props: &Props) -> Html {
     html!{
-        <div class={"specialCodeArea rs"}>
+        <div class={"specialCodeArea ts"}>
             {add_line_array(vec![
-                "pub fn",
-                "code_menu(_) {",
-                "    match _ {"
+                "export function",
+                "codeMenu(_) {",
+                "    return (",
+                "    <Routes>"
             ])}
             {prepare_menu(props)}
-            {add_line("    }")}
-            {add_line("}")}
+            {add_line_array(vec![
+                "    </Routes>",
+                "    )",
+                "}",
+            ])}
         </div>
     }
 }
